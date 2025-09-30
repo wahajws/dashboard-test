@@ -138,6 +138,11 @@ export const UserForm: React.FC<UserFormProps> = ({
             {errors.email && (
               <p className="text-sm text-destructive">{errors.email.message}</p>
             )}
+            {mode === 'create' && (
+              <p className="text-xs text-muted-foreground">
+                Email must be unique - each user needs a different email address
+              </p>
+            )}
           </div>
 
           {/* Password */}

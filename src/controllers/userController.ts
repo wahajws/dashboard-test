@@ -32,7 +32,16 @@ export class UserController {
       showSuccessToast('User Created', 'User has been successfully created');
       return newUser;
     } catch (error: any) {
-      showErrorToast('Failed to create user', error.message || 'Unable to create user');
+      console.error('UserCrudController.createUser error:', error);
+      
+      // Handle specific error cases
+      if (error.code === 409) {
+        showErrorToast('Email Already Exists', 'A user with this email address already exists. Please use a different email.');
+      } else if (error.code === 400) {
+        showErrorToast('Invalid Data', error.message || 'Please check your input and try again.');
+      } else {
+        showErrorToast('Failed to create user', error.message || 'Unable to create user');
+      }
       throw error;
     }
   }

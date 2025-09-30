@@ -31,8 +31,14 @@ export class UserService {
       const response = await httpService.post<any>('/users', userData);
       // Extract user from the response object
       return response?.data || response;
-    } catch (error) {
-      throw error;
+    } catch (error: any) {
+      console.error('UserService.createUser error:', error);
+      // Re-throw with more specific error information
+      throw {
+        code: error.status || error.code,
+        message: error.message || 'Failed to create user',
+        originalError: error
+      };
     }
   }
 
