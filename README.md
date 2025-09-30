@@ -2,6 +2,10 @@
 
 A modern, production-ready React TypeScript dashboard application with a futuristic UI design. Built with Vite, React Router v6, Tailwind CSS, shadcn/ui, and Zustand for state management.
 
+**Live Demo**: [View on GitHub Pages](https://wahajws.github.io/dashboard-test/)
+
+**Repository**: https://github.com/wahajws/dashboard-test
+
 ## 🚀 Features
 
 - **Modern Authentication**: JWT-based login with automatic token management
