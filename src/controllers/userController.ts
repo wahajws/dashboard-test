@@ -153,8 +153,8 @@ export class UserController {
       errors.push('Password must be at least 6 characters');
     }
 
-    if (userData.icNumber && userData.icNumber < 100000000000) {
-      errors.push('Invalid IC number');
+    if (userData.icNumber && userData.icNumber < 1) {
+      errors.push('IC number must be greater than 0');
     }
 
     return errors;
